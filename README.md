@@ -10,3 +10,4 @@ Change The Colors For https://pronouns.alejo.io/ (Twitch)
 <br>https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo
 <br>Opera: 
 <br>https://addons.opera.com/en/extensions/details/tampermonkey/
+![screen-gif](./tutorial/install.gif)
