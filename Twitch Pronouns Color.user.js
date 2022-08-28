@@ -48,9 +48,9 @@
         if(keyPressed[18] && keyPressed[82]) {
             delete keyPressed[18];
             delete keyPressed[82];
-            var backgroundColor = window.prompt("Set Pronouns Background (CSS Color)","green");
+            var backgroundColor = window.prompt("Set Pronouns Background (CSS Color)", getCookie("pronoun_background")==""?"green":getCookie("pronoun_background"));
             setCookie("pronoun_background", backgroundColor, 9999999999);
-            var textColor = window.prompt("Set Pronouns Text Color (CSS Color)","var(--color-text-base)");
+            var textColor = window.prompt("Set Pronouns Text Color (CSS Color)", getCookie("pronoun_text_color")==""?"var(--color-text-base)":getCookie("pronoun_text_color"));
             setCookie("pronoun_text_color", textColor, 9999999999);
         }
     }
