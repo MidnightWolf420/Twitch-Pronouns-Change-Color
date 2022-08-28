@@ -45,6 +45,9 @@
         } else {
             delete keyPressed[e.key]
         }
+        this.setTimeout(() => {
+            delete keyPressed[e.key]
+        }, 1500)
         if(keyPressed[18] && keyPressed[82]) {
             delete keyPressed[18];
             delete keyPressed[82];
