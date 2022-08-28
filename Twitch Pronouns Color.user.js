@@ -11,7 +11,6 @@
 
 (function() {
     'use strict';
-
     function getCookie(cname) {
         let name = cname + "=";
         let decodedCookie = document.cookie;
@@ -37,7 +36,24 @@
         }
         document.cookie = name + "=" + (value || "")  + expires + "; path=/";
     }
-
+    var keyPressed = {}; // You could also use an array
+    onkeydown = onkeyup = function(e){
+        e = e || event; // to deal with IE
+        var keyDown = (e.type == 'keydown');
+        if(keyDown) {
+            keyPressed[e.keyCode] = keyDown;
+        } else {
+            delete keyPressed[e.key]
+        }
+        if(keyPressed[18] && keyPressed[82]) {
+            delete keyPressed[18];
+            delete keyPressed[82];
+            var backgroundColor = window.prompt("Set Pronouns Background (CSS Color)","green");
+            setCookie("pronoun_background", backgroundColor, 9999999999);
+            var textColor = window.prompt("Set Pronouns Text Color (CSS Color)","var(--color-text-base)");
+            setCookie("pronoun_text_color", textColor, 9999999999);
+        }
+    }
     window.addEventListener("load", function(event)
     {
         if(getCookie("pronoun_background") == "") {
