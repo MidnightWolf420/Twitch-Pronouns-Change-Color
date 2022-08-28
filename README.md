@@ -4,8 +4,8 @@ Change The Colors For https://pronouns.alejo.io/ (Twitch)
 <br>Rainbow Gif (Set Background To url("https://i.imgur.com/btHb3Op.gif") To Use It)
 <br>Use With Greasemonkey or Tampermonkey
 <br>FireFox: 
-<br>https://addons.mozilla.org/en-CA/firefox/addon/tampermonkey/?utm_source=addons.mozilla.org&utm_medium=referral&utm_content=search
-<br>https://addons.mozilla.org/en-CA/firefox/addon/greasemonkey/?utm_source=addons.mozilla.org&utm_medium=referral&utm_content=search
+<br>https://addons.mozilla.org/en-CA/firefox/addon/tampermonkey/
+<br>https://addons.mozilla.org/en-CA/firefox/addon/greasemonkey/
 <br>Chrome: 
 <br>https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo
 <br>Opera: 
