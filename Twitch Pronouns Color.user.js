@@ -48,20 +48,20 @@
             keyPressed[18] = false;
             keyPressed[82] = false;
             var backgroundColor = window.prompt("Set Pronouns Background (CSS Color)", getCookie("pronoun_background")==""?"green":getCookie("pronoun_background"));
-            setCookie("pronoun_background", backgroundColor, 9999999999);
+            setCookie("pronoun_background", backgroundColor);
             var textColor = window.prompt("Set Pronouns Text Color (CSS Color)", getCookie("pronoun_text_color")==""?"var(--color-text-base)":getCookie("pronoun_text_color"));
-            setCookie("pronoun_text_color", textColor, 9999999999);
+            setCookie("pronoun_text_color", textColor);
         }
     }
     window.addEventListener("load", function(event)
     {
         if(getCookie("pronoun_background") == "") {
             var backgroundColor = window.prompt("Set Pronouns Background (CSS Color)","green");
-            setCookie("pronoun_background", backgroundColor, 9999999999);
+            setCookie("pronoun_background", backgroundColor);
         }
         if(getCookie("pronoun_text_color") == "") {
             var textColor = window.prompt("Set Pronouns Text Color (CSS Color)","var(--color-text-base)");
-            setCookie("pronoun_text_color", textColor, 9999999999);
+            setCookie("pronoun_text_color", textColor);
         }
         setInterval(() => {
             var styles = document.getElementsByTagName("style")
