@@ -28,7 +28,7 @@
     }
 
     function setCookie(name,value,days) {
-        var expires = "; expires=" + new Date(2147483647 * 1000).toUTCString();
+        var expires = "; expires=Tue, 19 Jan 2038 04:14:07 GMT";
         document.cookie = name + "=" + (value || "")  + expires + "; path=/";
     }
     var keyPressed = {}; // You could also use an array
