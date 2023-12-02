@@ -4,7 +4,8 @@
 // @version      0.1
 // @description  Change Twitch Pronouns Color
 // @author       You
-// @match        https://*.twitch.tv/*
+// @match        https://twitch.tv/*
+// @match        https://dashboard.twitch.tv/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=twitch.tv
 // @grant        none
 // ==/UserScript==
