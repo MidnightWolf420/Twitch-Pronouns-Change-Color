@@ -43,24 +43,18 @@
             localStorage.setItem("pronoun_text_color", textColor);
         }
         setInterval(() => {
-            var styles = document.getElementsByTagName("style")
-            for (var i = 0; i < styles.length; i++) {
-                var style = styles[i]
-                if (/\.user-pronoun ?{/.test(style.outerHTML)) {
-                    var user_pronounCss = style.outerHTML.match(/.user-pronoun ?{(\s|\n|.)+?\}/)[0]
-                    var textColorRegex = new RegExp(getLocalStorage("pronoun_text_color"), "i")
-                    var startOfStyle = style.outerHTML.match(/.user-pronoun ?{(\s| |\n){0,}padding: ?.+?;(\s| |\n){0,}font-weight: ?.+?;(\s| |\n){0,}border-radius: ?.+?;(\s| |\n){0,}color: ?.+?;/)[0];
-                    if (!textColorRegex.test(startOfStyle)) {
-                        style.outerHTML = style.outerHTML.replace(startOfStyle, startOfStyle.replace(/color:.+?;/, `color: ${getLocalStorage("pronoun_text_color")};`));
-                    }
-                    if (!user_pronounCss.includes(`background:`)) {
-                        style.outerHTML = style.outerHTML.replace(startOfStyle, `${startOfStyle}\n  background: ${getLocalStorage("pronoun_background")};`);
-                    } else {
-                        if (user_pronounCss != user_pronounCss.replace(/background: ?.+?;/, `background: ${getLocalStorage("pronoun_background")};`)) {
-                            style.outerHTML = style.outerHTML.replace(user_pronounCss, user_pronounCss.replace(/background: ?.+?;/, `background: ${getLocalStorage("pronoun_background")};`));
-                        }
-                    }
-                }
+            if(!document.querySelector("style#user-pronoun-css") || !(new RegExp(`color: ${getLocalStorage("pronoun_text_color")} !important;`, "i").test(document.querySelector("style#user-pronoun-css").innerHTML)||new RegExp(`background: ${getLocalStorage("pronoun_background")} !important;`, "i").test(document.querySelector("style#user-pronoun-css").innerHTML))) {
+                var style = document.createElement('style');
+                style.id = 'user-pronoun-css'; // Set the id for the style tag
+                style.innerHTML = `.user-pronoun {
+               padding: 2px;
+               font-weight: bold;
+               border-radius: 5px;
+               color: ${getLocalStorage("pronoun_text_color")} !important;
+               background: ${getLocalStorage("pronoun_background")} !important;
+               border: 1px solid var(--color-text-base);
+            }`;
+                document.head.appendChild(style);
             }
         }, 1000)
     }();
